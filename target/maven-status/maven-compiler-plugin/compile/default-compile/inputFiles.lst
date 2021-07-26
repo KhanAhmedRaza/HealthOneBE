@@ -2,18 +2,21 @@ C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\model\Drug.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\model\Manufacturer.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\service\impl\DrugServiceImpl.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\daos\UserDAO.java
+C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\service\EmailService.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\util\JsonRestTemplate.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\model\Country.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\controllers\DrugsController.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\pojo\User.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\daos\DrugsDOA.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\daos\DrugSearchDAO.java
+C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\config\CorsFilter.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\pojo\Query.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\model\DrugSearchResult.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\daos\impl\DrugSearchDAOImpl.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\model\DashboardResult.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\daos\impl\DashBoardDaoImpl.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\config\CorsConfig.java
+C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\model\DashboardFilter.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\service\impl\DashboardServiceImpl.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\model\Indicator.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\config\MySqlDBConfiguration.java
@@ -35,4 +38,5 @@ C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\service\Dashboa
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\config\MainWebAppInitializer.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\pojo\AgeGroup.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\config\WebConfig.java
+C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\controllers\EmailController.java
 C:\java-workspace\healthone\HealthOneBE\src\main\java\com\ost\ho\service\DrugService.java

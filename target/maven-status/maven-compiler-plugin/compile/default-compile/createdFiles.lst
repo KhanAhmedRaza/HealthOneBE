@@ -1,5 +1,7 @@
+com\ost\ho\config\CorsFilter.class
 com\ost\ho\model\Outcomes.class
 com\ost\ho\pojo\UserDetail.class
+com\ost\ho\model\DashboardFilter.class
 com\ost\ho\service\impl\DashboardServiceImpl.class
 com\ost\ho\util\QueryBean.class
 com\ost\ho\daos\UserDAO.class
@@ -13,12 +15,14 @@ com\ost\ho\model\Country.class
 com\ost\ho\model\DashboardImages.class
 com\ost\ho\daos\impl\UserDAOImpl.class
 com\ost\ho\daos\DashboardDao.class
+com\ost\ho\service\EmailService.class
 com\ost\ho\util\QueryCriteria.class
 com\ost\ho\controllers\SampleController.class
 com\ost\ho\service\impl\DrugServiceImpl.class
 com\ost\ho\model\Indicator.class
 com\ost\ho\config\MainWebAppInitializer.class
 com\ost\ho\daos\DrugSearchDAO.class
+com\ost\ho\controllers\EmailController.class
 com\ost\ho\model\HealthOneId.class
 com\ost\ho\daos\impl\DrugSearchDAOImpl.class
 com\ost\ho\model\Manufacturer.class

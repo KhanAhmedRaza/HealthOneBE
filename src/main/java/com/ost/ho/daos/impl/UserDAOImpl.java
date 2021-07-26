@@ -24,9 +24,17 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		String userSelect = queryBean.getQuery("UserDAO.insertuser"); 
 		String userDetailSelect = queryBean.getQuery("UserDAO.insertuserDetails"); 
+		/*
+		 * try {
+		 * 
+		 * }catch(Exception ex) {
+		 * 
+		 * }
+		 */
 		hoJdbcTemplate.update(userSelect, new Object[] { user.getEmail(), user.getPassword()});
 		hoJdbcTemplate.update(userDetailSelect, new Object[] {user.getEmail(),user.getFirstName(), user.getLastName(), 
 				user.getProfession() });
+		
 
 	}
 
@@ -47,16 +55,16 @@ public class UserDAOImpl implements UserDAO {
 	public User getUser(String  userName) {
 		// TODO Auto-generated method stub
 		String userSelect = queryBean.getQuery("UserDAO.selectuser"); 
-		/*
-		 * List<User> users = hoJdbcTemplate.query(userSelect, new Object[] {userName},
-		 * (rs, rownum) -> { User user = new User();
-		 * user.setEmail(rs.getString("userid"));
-		 * user.setPassword(rs.getString("password")); return user; }); return
-		 * users.get(0);
-		 */
 		
-		User user = hoJdbcTemplate.queryForObject(userSelect, new Object[] {userName},User.class);
-		return user;
+		  List<User> users = hoJdbcTemplate.query(userSelect, new Object[] {userName},
+		  (rs, rownum) -> { User user = new User();
+		  user.setEmail(rs.getString("userid"));
+		  user.setPassword(rs.getString("password")); return user; });
+		  return users.get(0);
+		 
+		
+		//User user = hoJdbcTemplate.queryForObject(userSelect, new Object[] {userName},User.class);
+		//return user;
 	}
 
 }
