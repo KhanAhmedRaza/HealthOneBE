@@ -34,6 +34,7 @@ com\ost\ho\model\DrugSearchResult.class
 com\ost\ho\config\CorsConfig.class
 com\ost\ho\pojo\AgeGroup.class
 com\ost\ho\service\DashboardService.class
+com\ost\ho\config\PyramidProblem.class
 com\ost\ho\config\WebConfig.class
 com\ost\ho\daos\impl\DashBoardDaoImpl.class
 com\ost\ho\service\DrugService.class

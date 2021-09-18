@@ -16,33 +16,32 @@ public class UserDAOImpl implements UserDAO {
 	@Autowired
 	JdbcTemplate hoJdbcTemplate;
 
-	
-	  @Autowired QueryBean queryBean;
-	 
-	@Override
-	public void addUser(User user) {
-		// TODO Auto-generated method stub
-		String userSelect = queryBean.getQuery("UserDAO.insertuser"); 
-		String userDetailSelect = queryBean.getQuery("UserDAO.insertuserDetails"); 
-		/*
-		 * try {
-		 * 
-		 * }catch(Exception ex) {
-		 * 
-		 * }
-		 */
-		hoJdbcTemplate.update(userSelect, new Object[] { user.getEmail(), user.getPassword()});
-		hoJdbcTemplate.update(userDetailSelect, new Object[] {user.getEmail(),user.getFirstName(), user.getLastName(), 
-				user.getProfession() });
-		
+	@Autowired
+	QueryBean queryBean;
 
+	@Override
+	public void addUser(User user) throws Exception {
+		// TODO Auto-generated method stub
+		String userSelect = queryBean.getQuery("UserDAO.insertuser");
+		String userDetailSelect = queryBean.getQuery("UserDAO.insertuserDetails");
+		
+		  try {
+			  hoJdbcTemplate.update(userSelect, new Object[] { user.getEmail(), user.getPassword() });
+			  hoJdbcTemplate.update(userDetailSelect,
+						new Object[] { user.getEmail(), user.getFirstName(), user.getLastName(), user.getProfession() });
+
+		  }catch(Exception ex) {
+		   throw new Exception(ex.getMessage());
+		  }
+		 
+		
+		
 	}
 
 	@Override
 	public User authenticate(User usr) {
-		String userSelect = queryBean.getQuery("UserDAO.selectuser"); 
-		List<User> users = hoJdbcTemplate.query(userSelect, new Object[] {usr.getEmail()}, 
-		(rs, rownum) -> {
+		String userSelect = queryBean.getQuery("UserDAO.selectuser");
+		List<User> users = hoJdbcTemplate.query(userSelect, new Object[] { usr.getEmail() }, (rs, rownum) -> {
 			User user = new User();
 			user.setEmail(rs.getString("userid"));
 			user.setPassword(rs.getString("password"));
@@ -52,19 +51,21 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User getUser(String  userName) {
+	public User getUser(String userName) {
 		// TODO Auto-generated method stub
-		String userSelect = queryBean.getQuery("UserDAO.selectuser"); 
-		
-		  List<User> users = hoJdbcTemplate.query(userSelect, new Object[] {userName},
-		  (rs, rownum) -> { User user = new User();
-		  user.setEmail(rs.getString("userid"));
-		  user.setPassword(rs.getString("password")); return user; });
-		  return users.get(0);
-		 
-		
-		//User user = hoJdbcTemplate.queryForObject(userSelect, new Object[] {userName},User.class);
-		//return user;
+		String userSelect = queryBean.getQuery("UserDAO.selectuser");
+
+		List<User> users = hoJdbcTemplate.query(userSelect, new Object[] { userName }, (rs, rownum) -> {
+			User user = new User();
+			user.setEmail(rs.getString("userid"));
+			user.setPassword(rs.getString("password"));
+			return user;
+		});
+		return users.get(0);
+
+		// User user = hoJdbcTemplate.queryForObject(userSelect, new Object[]
+		// {userName},User.class);
+		// return user;
 	}
 
 }

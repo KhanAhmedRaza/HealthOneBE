@@ -55,7 +55,7 @@
 			<key>dashboardDao.getAllCountires</key>
 			<value>
 				<sql>
-					select country  from Country;
+					select country, country_name  from Country;
 				</sql>
 			</value>
 			

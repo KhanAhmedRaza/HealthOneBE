@@ -38,6 +38,8 @@ public class MySqlDBConfiguration {
 		 hoDataSource.setUsername(username);
 		 hoDataSource.setPassword(password);
 		 hoDataSource.setValidationQuery("SELECT 1 FROM DUAL");
+		 hoDataSource.setTestOnBorrow(true);
+		 hoDataSource.setLogValidationErrors(true);
 		 return hoDataSource;
 	 }
 	 

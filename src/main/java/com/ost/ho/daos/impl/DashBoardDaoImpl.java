@@ -44,7 +44,7 @@ public class DashBoardDaoImpl implements DashboardDao {
 		List<Country> countries = hoJdbcTemplate.query(sql_countries, (rs, rownum) -> {
 			Country country = new Country();
 			country.setCountryCode(rs.getString("country"));
-			//country.setCountryName(rs.getString(columnLabel));
+			country.setCountryName(rs.getString("country_name"));
 			return country;
 			
 		});

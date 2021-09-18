@@ -31,9 +31,9 @@ public class WebConfig implements WebMvcConfigurer {
 	String host;
 	@Value("${spring.javax.email.port}")
 	String port;
-	@Value("${spring.datasource.username}")
+	@Value("${spring.javax.email.username}")
 	String username;
-	@Value("${spring.datasource.password}")
+	@Value("${spring.javax.email.password}")
 	String password;
 	
 	/*

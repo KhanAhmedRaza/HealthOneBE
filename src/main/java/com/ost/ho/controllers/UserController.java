@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ost.ho.daos.UserDAO;
+import com.ost.ho.pojo.OSTFErrors;
 import com.ost.ho.pojo.User;
 
 @RestController
@@ -31,7 +32,19 @@ public class UserController {
 			System.out.println(entity);
 		}catch(Exception ex) {
 			System.out.println(ex);
-			entity = new ResponseEntity<String>("Error", HttpStatus.INTERNAL_SERVER_ERROR);
+			OSTFErrors errors = new OSTFErrors();
+			if(ex.getMessage().contains("Duplicate")) {
+				errors.setErrorCode("Duplicate Email");
+				errors.setErrorMessage("Email Address already exist");
+				entity = new ResponseEntity<OSTFErrors>(errors, HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+				
+			else {
+				errors.setErrorCode("Error");
+				errors.setErrorMessage("Error occurred while creating account");
+				entity = new ResponseEntity<String>("Error", HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+				
 		}
 		
 		
